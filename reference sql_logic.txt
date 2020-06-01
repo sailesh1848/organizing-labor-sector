@@ -1,0 +1,104 @@
+Table users_details {
+    email email [NOT NULL, unique]
+    password varchar [NOT NULL]
+    LastName varchar [NOT NULL]
+    FirstName varchar
+    Age int
+    phone_number int [NOT NULL]
+    
+}
+
+Table users_cred {
+    user_id int [ref: > users_details.email, NOT NULL]
+    password varchar [NOT NULL]
+}
+
+
+
+Table Business_category {
+    category_id int [pk, NOT NULL, increment]
+    Business_category varchar [NOT NULL]
+}
+
+Table skill_list {
+    skill_id int [pk, NOT NULL, increment]
+    skill varchar [NOT NULL]
+}
+
+
+Table labour_details {
+    labourer_id int [pk, NOT NULL, increment]
+    FirstName varchar
+    LastName varchar [NOT NULL]
+    date_of_birth date
+    permanent_address varchar [NOT NULL]
+    permanent_address_city varchar [NOT NULL]
+    permanent_address_state varchar [NOT NULL]
+    permanent_address_pinCode int [NOT NULL]
+    adhaar_no int [NOT NULL]
+    pan_no int
+    skill_1 int [ref: > skill_list.skill_id,NOT NULL] 
+    skill_2 int [ref: > skill_list.skill_id]
+    skill_3 int [ref: > skill_list.skill_id]
+    active_status bool
+    currently_employed bool
+    creation_date timestamp
+    last_modified_date timestamp
+}
+
+Table employer_details {
+    employer_id int [pk, NOT NULL, increment]
+    employer_Name varchar [NOT NULL]
+    address varchar [NOT NULL]
+    city varchar [NOT NULL]
+    state varchar [NOT NULL]
+    pin_code int [NOT NULL]
+    contact_name varchar [NOT NULL]
+    type_of_business int [ref: > Business_category.category_id]
+    tan_no int [NOT NULL]
+    registration_no int [NOT NULL]
+    status bool
+    creation_date timestamp
+    last_modified_date timestamp
+}
+
+Table govt_user_details {
+    govt_user_id int [pk, NOT NULL, unique]
+    FirstName varchar
+    LastName varchar [NOT NULL]
+    office_name varchar [NOT NULL]
+    office_address varchar [NOT NULL]
+    city varchar [NOT NULL]
+    state varchar [NOT NULL]
+    pincode int [NOT NULL]
+    phone_no int [NOT NULL]
+    status bool
+    creation_date timestamp
+    last_modified_date timestamp
+}
+
+Table contract_details {
+    contract_id int [pk, NOT NULL, unique]
+    employment_start_date date [NOT NULL]
+    employment_end_date date [NOT NULL]
+    employment_city varchar [NOT NULL]
+    employment_state varchar [NOT NULL]
+    total_no_of_labourer_needed int [NOT NULL]
+    skill_1 int [ref: > skill_list.skill_id]
+    no_of_labourer_skill_1 int
+    min_daily_wages_skill_set_1 int
+    daily_wages_skill_set_1 int
+    skill_2 int [ref: > skill_list.skill_id]
+    no_of_labourer_skill_2 int
+    min_daily_wages_skill_set_2 int
+    daily_wages_skill_set_2 int
+    skill_3 int [ref: > skill_list.skill_id]
+    no_of_labourer_skill_3 int
+    min_daily_wages_skill_set_3 int
+    daily_wages_skill_set_3 int [NOT NULL]
+    medical_insurance_cover bool
+    creation_date timestamp
+    last_modified_date timestamp
+    status bool
+    
+}
