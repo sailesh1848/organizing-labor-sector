@@ -1,0 +1,20 @@
+CREATE TABLE `labour_details` (
+  `labourer_id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `permanent_address` varchar(250) NOT NULL,
+  `permanent_address_city` varchar(50) NOT NULL,
+  `permanent_address_state` varchar(50) NOT NULL,
+  `permanent_address_pin_code` int NOT NULL,
+  `adhaar_no` BigInt(12) NOT NULL,
+  `pan_no` varchar(10) NOT NULL,
+  `phone_number` BigInt(12) NOT NULL,
+  `skill_1` int(2) NOT NULL,
+  `skill_2` int(2),
+  `skill_3` int(2),
+  `active_status` bool NOT NULL,
+  `currently_employed` bool NOT NULL,
+  `creation_date` timestamp,
+  `last_modified_date` timestamp
+);
