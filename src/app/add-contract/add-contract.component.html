@@ -1,0 +1,114 @@
+<div class="one">
+    <form (ngSubmit)="save()">
+       <div class="form-group">
+            <label for="startdate">Employment Start Date</label>
+            <input type="date" class="form-control" id="startdate" [(ngModel)]="contract.employmentStartDate" name="startdate">
+        </div>
+
+        <div class="form-group">
+            <label for="enddate">Employment End Date</label>
+            <input type="date" class="form-control" id="enddate" [(ngModel)]="contract.employmentEndDate" name="enddate">
+        </div>
+        
+        <div class="form-group">
+            <label for="city">Employment City</label>
+            <input type="text" class="form-control" id="city" [(ngModel)]="contract.employmentCity" name="city">
+        </div>
+        <div class="form-group">
+            <label for="state"> Employment State</label>
+            <input type="text" class="form-control" id="state" [(ngModel)]="contract.employmentState" name="state">
+        </div>
+
+        <div class="form-group">
+            <label for="totalNoOfLabourerNeeded">totalNoOfLabourerNeeded</label>
+            <input type="number" class="form-control" id="totalNoOfLabourerNeeded" [(ngModel)]="contract.totalNoOfLabourerNeeded" name="totalNoOfLabourerNeeded">
+        </div>
+        <div class="form-group">
+            <label for="skillset1">skillset1</label>
+            <input type="number" class="form-control"  id="skillset1" (input)="skillWage1($event)" [(ngModel)]="contract.skillset1" name="skillset1">
+        </div>
+
+        <div class="form-group">
+            <label for="labourerNeededSkillset1">labourerNeededSkillset1</label>
+            <input type="number" class="form-control" id="labourerNeededSkillset1" [(ngModel)]="contract.labourerNeededSkillset1" name="labourerNeededSkillset1">
+        </div>
+        
+        
+        <div>
+            <tr>
+                <td>Minimum Daily Wage Skillset1</td>
+            </tr>
+            <tr>
+                <td><textarea>{{skill1.minDailyWage}}</textarea></td>
+            </tr>
+        </div>
+
+        <div class="form-group">
+            <label for="dailyWageSkillset1">dailyWageSkillset1</label>
+            <input type="number" class="form-control" id="dailyWageSkillset1" [(ngModel)]="contract.dailyWageSkillset1" name="dailyWageSkillset1">
+        </div>
+      
+        <div class="form-group">
+            <label for="skillset2">skillset2</label>
+            <input type="number" class="form-control"  id="skillset2" (input)="skillWage2($event)" [(ngModel)]="contract.skillset2" name="skillset2">
+        </div>
+
+        <div class="form-group">
+            <label for="labourerNeededSkillset2">labourerNeededSkillset2</label>
+            <input type="number" class="form-control" id="labourerNeededSkillset2" [(ngModel)]="contract.labourerNeededSkillset2" name="labourerNeededSkillset2">
+        </div>
+        
+        
+        <div>
+            <tr>
+                <td>Minimum Daily Wage Skillset2</td>
+            </tr>
+            <tr>
+                <td><textarea>{{skill2.minDailyWage}}</textarea></td>
+            </tr>
+        </div>
+
+        <div class="form-group">
+            <label for="dailyWageSkillset1">dailyWageSkillset2</label>
+            <input type="number" class="form-control" id="dailyWageSkillset2" [(ngModel)]="contract.dailyWageSkillset2" name="dailyWageSkillset2">
+        </div>
+      
+        <div class="form-group">
+            <label for="skillset3">skillset3</label>
+            <input type="number" class="form-control"  id="skillset3" (input)="skillWage3($event)" [(ngModel)]="contract.skillset3" name="skillset3">
+        </div>
+
+        <div class="form-group">
+            <label for="labourerNeededSkillset3">labourerNeededSkillset3</label>
+            <input type="number" class="form-control" id="labourerNeededSkillset3" [(ngModel)]="contract.labourerNeededSkillset3" name="labourerNeededSkillset3">
+        </div>
+        
+        
+        <div>
+            <tr>
+                <td>Minimum Daily Wage Skillset3</td>
+            </tr>
+            <tr>
+                <td><textarea>{{skill3.minDailyWage}}</textarea></td>
+            </tr>
+        </div>
+
+        <div class="form-group">
+            <label for="dailyWageSkillset3">dailyWageSkillset3</label>
+            <input type="number" class="form-control" id="dailyWageSkillset3" [(ngModel)]="contract.dailyWageSkillset3" name="dailyWageSkillset3">
+        </div>
+
+        <div class="form-group">
+            <label for="medicalInsuranceCover">Employment medicalInsuranceCover</label>
+            <input type="text" class="form-control" id="medicalInsuranceCover" [(ngModel)]="contract.medicalInsuranceCover" name="medicalInsuranceCover">
+        </div>
+      
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+<!--<div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+</div>-->

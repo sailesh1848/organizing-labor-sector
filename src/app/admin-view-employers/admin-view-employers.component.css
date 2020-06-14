@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 5%;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.color-black {
+  color: black !important;
+}
