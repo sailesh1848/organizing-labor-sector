@@ -1,12 +1,14 @@
 <mat-card>
-    <a mat-icon-button color="primary" routerLink=""><mat-icon>home</mat-icon></a>
+    <a mat-icon-button color="primary" routerLink="/admin"><mat-icon>home</mat-icon></a>
     </mat-card>
 
 <h2 align= "center" class="mat-h1">Employers List</h2>  
-<mat-form-field >
+<div class="filter_align"  >
+<mat-form-field>
   <mat-label>Filter as you type anything</mat-label>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type to filter">
 </mat-form-field>
+</div>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>

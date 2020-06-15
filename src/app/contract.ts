@@ -1,5 +1,7 @@
 export class Contract {
   contractId: number;
+  employerId: number;
+  employerName: string;
   employmentStartDate: Date;
   employmentEndDate: Date;
   employmentCity: String;

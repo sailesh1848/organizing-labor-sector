@@ -149,5 +149,17 @@ export class MaterialModule {
       "view",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/view.svg")
     );
+
+    this.matIconRegistry.addSvgIcon(
+      "warning",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/warning.svg")
+    );
+
+    this.matIconRegistry.addSvgIcon(
+      "assignment",
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        "../assets/assignment.svg"
+      )
+    );
   }
 }

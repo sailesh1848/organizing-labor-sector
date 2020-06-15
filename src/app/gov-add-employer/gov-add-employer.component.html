@@ -1,0 +1,163 @@
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/gov"><mat-icon>home</mat-icon></a>
+    </mat-card>
+    <h2 align= "center" class="mat-h1">Add Employer</h2>  
+<div class="form_align"> 
+    <div [hidden]="submitted" style="width: 50%;">
+            <form [formGroup]="registerEmployerForm"  #saveemployer (ngSubmit)="onSubmit(saveemployer)" #f="ngForm">
+            
+                <div class="form-group">
+                <mat-form-field> 
+              <label for="employerName">Employer Name:</label>  
+              <input #en maxlength="50" matInput placeholder="Employer Name:" formControlName="employerName"   
+                 title="Enter Employer Name" required>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['employerName'].errors?.required"> Employer Name is required...</mat-error>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['employerName'].errors?.pattern"> Employer Name should contain atleast 3 characters </mat-error> 
+                    <mat-hint align="end">{{en.value.length}} / 50</mat-hint>
+              </mat-form-field>
+                </div>
+               
+                <div class="form-group">
+                  <mat-form-field> 
+              <label for="address">Address</label>  
+              <input #ad maxlength="100" matInput placeholder="Address" formControlName="address"   
+                 title="Enter Address" required>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['address'].errors?.required"> Address is required...</mat-error>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['address'].errors?.pattern"> Address should contain atleast 3 characters </mat-error> 
+                    <mat-hint align="end">{{ad.value.length}} / 100</mat-hint>
+              </mat-form-field>
+                </div>
+       
+                <div class="form-group">
+                <mat-form-field> 
+                <label for="city">City</label>  
+              <input #c maxlength="50" matInput placeholder="City" formControlName="city"   
+                 title="Enter City" required>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['city'].errors?.required"> City is required...</mat-error>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['city'].errors?.pattern"> City should contain atleast 3 characters </mat-error> 
+                    <mat-hint align="end">{{c.value.length}} / 50</mat-hint>
+              </mat-form-field>
+                </div>
+
+                <div class="form-group">
+          <mat-form-field>  
+              <label for="state">State/UT</label>  
+                <mat-select placeholder="State/UT" formControlName="state" title="Select State" required>  
+                  <mat-option value="null">--Select State/UT--</mat-option>
+                  <mat-option value="Union Territory">Union Territory</mat-option>      
+                  <mat-option value="Andhra Pradesh">Andhra Pradesh</mat-option>  
+                  <mat-option value="Arunachal Pradesh">Arunachal Pradesh</mat-option>  
+                  <mat-option value="Assam">Assam</mat-option>  
+                  <mat-option value="Bihar">Bihar</mat-option>
+                  <mat-option value="Chhattisgarh">Chhattisgarh</mat-option>  
+                  <mat-option value="Goa">Goa</mat-option>  
+                  <mat-option value="Gujarat">Gujarat</mat-option>  
+                  <mat-option value="Haryana">Haryana</mat-option>  
+                  <mat-option value="Himachal Pradesh">Himachal Pradesh</mat-option>  
+                  <mat-option value="Jharkhand">Jharkhand</mat-option>  
+                  <mat-option value="Karnataka">Karnataka</mat-option>  
+                  <mat-option value="Kerala">Kerala</mat-option>  
+                  <mat-option value="Madhya Pradesh">Madhya Pradesh</mat-option>  
+                  <mat-option value="Maharashtra">Maharashtra</mat-option>  
+                  <mat-option value="Manipur">Manipur</mat-option>  
+                  <mat-option value="Meghalaya">Meghalaya</mat-option>  
+                  <mat-option value="Mizoram">Mizoram</mat-option>  
+                  <mat-option value="Nagaland">Nagaland</mat-option>  
+                  <mat-option value="Odisha">Odisha</mat-option>
+                  <mat-option value="Punjab">Punjab</mat-option>
+                  <mat-option value="Rajasthan">Rajasthan</mat-option>
+                  <mat-option value="Sikkim">Sikkim</mat-option>
+                  <mat-option value="Tamil Nadu">Tamil Nadu</mat-option>
+                  <mat-option value="Telangana">Telangana</mat-option>
+                  <mat-option value="Tripura">Tripura</mat-option>
+                  <mat-option value="Uttar Pradesh">Uttar Pradesh</mat-option>
+                  <mat-option value="Uttarakhand">Uttarakhand</mat-option>
+                  <mat-option value="West Bengal">West Bengal</mat-option>
+                </mat-select>
+                </mat-form-field>  
+          </div> 
+
+                <div class="form-group">
+                <mat-form-field>  
+              <label for="pincode">PinCode</label>  
+              <input #pincode maxlength="6" placeholder="PinCode" matInput formControlName="pincode"  title="Enter PinCode"required >  
+              <mat-error  *ngIf="registerEmployerForm.controls['pincode'].errors?.required">PinCode Required</mat-error>  
+              <mat-error  *ngIf="registerEmployerForm.controls['pincode'].errors?.pattern"> 6 digits number only </mat-error>                     
+              <mat-hint align="end">{{pincode.value.length}} / 6</mat-hint>
+              </mat-form-field>
+                </div>
+                    
+                <div class="form-group">
+                <mat-form-field> 
+              <label for="contactName">Contact Name</label>  
+              <input #cn maxlength="50" matInput placeholder="Contact Name" formControlName="contactName"   
+                 title="Enter Contact Name" required>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['contactName'].errors?.required">Contact Name Required</mat-error>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['contactName'].errors?.pattern"> Contact Name should contain atleast 3 characters </mat-error> 
+                    <mat-hint align="end">{{cn.value.length}} / 50</mat-hint>
+          </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                 <mat-form-field> 
+              <label for="phNo">Phone Number:</label>  
+              <input #pn maxlength="10" matInput placeholder="Phone Number" formControlName="phNo"   
+                 title="Enter Phone Number" required>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['phNo'].errors?.required">Phone Number Required</mat-error>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['phNo'].errors?.pattern"> Please Enter a valid Phone Number(start with 6,7,8,9 and contain 10digits only) </mat-error> 
+                    <mat-hint align="end">{{pn.value.length}} / 10</mat-hint>
+          </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                <mat-form-field>
+          <mat-select formControlName="businessType" placeholder="Business Type" required>
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let bt of bts">
+              <mat-option value="{{bt.id}}">{{bt.value}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                <mat-form-field> 
+              <label for="tanNo">TAN Number:</label>  
+              <input #tn maxlength="10" matInput placeholder="TAN Number" formControlName="tanNo"   
+                 title="Enter TAN Number" required>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['tanNo'].errors?.required">TAN Number Required</mat-error>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['tanNo'].errors?.pattern"> Please Enter a valid TAN Number </mat-error> 
+                    <mat-hint align="end">{{tn.value.length}} / 10</mat-hint>
+          </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                <mat-form-field> 
+              <label for="regnNo">Registration Number:</label>  
+              <input #rn maxlength="10" matInput placeholder="Registration Number" formControlName="regnNo"   
+                 title="Enter Registration Number" required>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['regnNo'].errors?.required">Registration Number Required</mat-error>  
+                    <mat-error  *ngIf="registerEmployerForm.controls['regnNo'].errors?.pattern"> Please Enter a valid Registration Number </mat-error> 
+                    <mat-hint align="end">{{rn.value.length}} / 10</mat-hint>
+          </mat-form-field>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-success" [disabled]="!registerEmployerForm.valid"><mat-icon svgIcon= "save"></mat-icon>Submit</button>
+                </div>
+                 
+            </form>
+            
+        </div>
+</div>
+ <div class="form_algin" align="center">  
+      <div [hidden]="!submitted">  
+         <h4>Data Added SuccessFully!</h4>  
+         <button (click)="addEmployerForm()" mat-raised-button color="primary"><mat-icon svgIcon= "addmore"></mat-icon>Add More employer Data</button>  
+      </div>        
+  </div>
+
+
+<div class="footer" align= "center">Capgemini.All rights reserved 2020.</div>
+
+

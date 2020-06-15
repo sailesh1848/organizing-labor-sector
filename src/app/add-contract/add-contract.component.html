@@ -1,5 +1,18 @@
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/emp"><mat-icon>home</mat-icon></a>
+    </mat-card>
+    <h2 align= "center" class="mat-h1">Add Contract
+    </h2>  
 <div class="one">
     <form (ngSubmit)="save()">
+    <div class="form-group">
+            <label for="id">Employer Id</label>
+            <input type="number" class="form-control" id="id" [(ngModel)]="contract.employerId" name="id">
+        </div>
+        <div class="form-group">
+            <label for="name">Employer Name</label>
+            <input type="number" class="form-control" id="name" [(ngModel)]="contract.employerName" name="name">
+        </div>
        <div class="form-group">
             <label for="startdate">Employment Start Date</label>
             <input type="date" class="form-control" id="startdate" [(ngModel)]="contract.employmentStartDate" name="startdate">

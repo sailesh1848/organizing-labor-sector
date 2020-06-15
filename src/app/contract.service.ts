@@ -22,4 +22,7 @@ export class ContractService {
   getSkillById(id: number): Observable<object> {
     return this.http.get(`${this.baseURL}/Skill/${id}`);
   }
+  getContractList(): Observable<any> {
+    return this.http.get(`${this.baseURL}` + "/contracts");
+  }
 }

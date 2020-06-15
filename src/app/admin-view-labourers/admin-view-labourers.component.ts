@@ -21,7 +21,7 @@ export class AdminViewLabourersComponent implements OnInit {
     "gender",
     "permanent_address_city",
     "phoneNum",
-    "businessType",
+    "aadhaar_no",
     "skill_1",
     "skill_2",
     "skill_3",

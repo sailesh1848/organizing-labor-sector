@@ -27,6 +27,14 @@ import { AdminEditEmployerComponent } from './admin-edit-employer/admin-edit-emp
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddContractComponent } from './add-contract/add-contract.component';
+import { DummyComponent } from './dummy/dummy.component';
+import { GovAddEmployerComponent } from './gov-add-employer/gov-add-employer.component';
+import { GovAddLabourComponent } from './gov-add-labour/gov-add-labour.component';
+import { GovAddContractComponent } from './gov-add-contract/gov-add-contract.component';
+import { GovViewEmployersComponent } from './gov-view-employers/gov-view-employers.component';
+import { GovViewLabourersComponent } from './gov-view-labourers/gov-view-labourers.component';
+import { GovViewContractsComponent } from './gov-view-contracts/gov-view-contracts.component';
+import { EmpAddConComponent } from './emp-add-con/emp-add-con.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +50,14 @@ import { AddContractComponent } from './add-contract/add-contract.component';
     AdminHeaderComponent,
     FooterComponent,
     AddContractComponent,
+    DummyComponent,
+    GovAddEmployerComponent,
+    GovAddLabourComponent,
+    GovAddContractComponent,
+    GovViewEmployersComponent,
+    GovViewLabourersComponent,
+    GovViewContractsComponent,
+    EmpAddConComponent,
   ],
   imports: [
     BrowserModule,

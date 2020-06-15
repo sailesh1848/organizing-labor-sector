@@ -88,7 +88,7 @@ export class AdminAddEmployerComponent implements OnInit {
 
   bts = [
     { id: 11, value: "Manufacturing" },
-    { id: 22, value: "Construction" },
-    { id: 33, value: "Logistics" },
+    { id: 12, value: "Construction" },
+    { id: 13, value: "Logistics" },
   ];
 }

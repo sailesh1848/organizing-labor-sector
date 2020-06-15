@@ -1,0 +1,139 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 15%;
+}
+.filter_align {
+  padding-left: 85%;
+  padding-right: 1.25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.color-black {
+  color: black !important;
+}
+
+.table-hover {
+  padding: 1%;
+}
+
+.snapshot-card1 {
+  height: 130px;
+  width: 300px;
+}
+
+.snapshot-card13 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #e0e0e0;
+  color: #2b0b3d;
+}
+
+.snapshot-card131 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #e0e0e0;
+  color: #ff5733;
+}
+.snapshot-card2 {
+  width: 300px;
+}
+
+.snapshot-card11 {
+  width: 150px;
+  align-items: center;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  /* identical to box height */
+
+  color: #ffffff;
+
+  background-color: #75c9a8;
+}
+.snapshot-card12 {
+  width: 150px;
+  align-items: center;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  /* identical to box height */
+
+  color: #ffffff;
+
+  background-color: #9b9c9e;
+}
+
+.grid2 {
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #f2f6f9;
+}
+
+.dashboard-card1 {
+  width: 60%;
+  text-align: center;
+  background: #6cc6e9;
+  border: 1px solid #6cc6e9;
+  box-sizing: border-box;
+}
+
+.dashboard-card2 {
+  width: 60%;
+  text-align: center;
+  background: #9f8ec4;
+  border: 1px solid #9f8ec4;
+  box-sizing: border-box;
+}
+
+.dashboard-card3 {
+  width: 60%;
+  text-align: center;
+  background: #6871b6;
+  border: 1px solid #6871b6;
+  box-sizing: border-box;
+}
+
+.grid-container1 {
+  height: 20%;
+}
+
+.grid-container2 {
+  height: 30%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.i {
+  transform: scale(2.35);
+  background-color: #ffffff;
+}
+
+.i1 {
+  transform: scale(3.35);
+  background-color: #ffffff;
+}

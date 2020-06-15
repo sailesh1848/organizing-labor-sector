@@ -1,30 +1,19 @@
 <body>
 <mat-card>
-    <a mat-icon-button color="primary" routerLink=""><mat-icon>home</mat-icon></a>
-    <a mat-button routerLink="add-employer"  color="primary"> <mat-icon svgIcon= "Add"></mat-icon>Add Employer</a>
-    <a mat-button routerLink="add-labour" color="primary"> <mat-icon svgIcon= "Add"></mat-icon>Add Labourer</a>
-    <a mat-button routerLink="view-employers" color="primary"> <mat-icon svgIcon= "reports"></mat-icon>View Employers</a>
-    <a mat-button routerLink=""  color="primary"> <mat-icon svgIcon= "reports"></mat-icon>View Labourers</a>
+    <a mat-icon-button color="primary" routerLink="/emp"><mat-icon>home</mat-icon></a>
+    <a mat-button routerLink="add-contract"  color="primary"> <mat-icon svgIcon= "Add"></mat-icon>Add Contract</a>
     </mat-card>
   
 <div class="grid-container1">   
-  <mat-grid-list cols="4" rowHeight=".5:.18" >  
+  <mat-grid-list cols="5" rowHeight=".5:.18" > 
+  <mat-grid-tile  [colspan]=1  [rowspan]=1>
+  </mat-grid-tile>  
+  <mat-grid-tile  [colspan]=1  [rowspan]=1>
+  </mat-grid-tile>  
     <mat-grid-tile  [colspan]=1 [rowspan]=1>
-      <mat-icon  class="i" align="left"svgIcon="labourer"></mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-icon  class="i1" align="left"svgIcon="labourer"></mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <mat-card align="right" class="dashboard-card1" text-align="center">  
-      Labourers &nbsp;<b class="card-text">1002</b>
-      </mat-card>  
-    </mat-grid-tile>  
-   <mat-grid-tile  [colspan]=1 [rowspan]=1>
-      <mat-icon  class="i" align="left"svgIcon="Employer"></mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-      <mat-card align="right" class="dashboard-card2" text-align="center">  
-      Employers &nbsp;<b class="card-text">1002</b>
-      </mat-card>  
-    </mat-grid-tile>  
-    <mat-grid-tile  [colspan]=1 [rowspan]=1>
-      <mat-icon  class="i" align="left"svgIcon="govt"></mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-      <mat-card align="right" class="dashboard-card3" text-align="center">  
-      Govt Users &nbsp;<b class="card-text">1002</b>
+      Labourers Registered with Govt &nbsp;<b class="card-text">1002</b>
       </mat-card>  
     </mat-grid-tile>
   </mat-grid-list>  
@@ -32,7 +21,7 @@
 
 <div class="grid-container2">  
   <h3 class="mat-h1" align="center"><b>Snapshot</b></h3>  
-  <mat-grid-list class="grid2" cols="4" rowHeight=".5:.18"> 
+  <mat-grid-list class="grid2" cols="4" rowHeight=".5:.18">
   <mat-grid-tile  [colspan]=1  [rowspan]=1>
   <mat-card class="snapshot-card1">  
         <mat-card-header>  
@@ -46,68 +35,41 @@
         </mat-card-content>  
       </mat-card>  
   </mat-grid-tile>
+
+   <mat-grid-tile  [colspan]=1  [rowspan]=1>
+  <mat-card class="snapshot-card1">  
+        <mat-card-header>  
+          <mat-card-title>
+          <mat-icon svgIcon= "warning"></mat-icon> 
+           T-30 days Contracts
+          </mat-card-title>  
+        </mat-card-header>  
+        <mat-card-content class="dashboard-card-content" align="center">  
+          <mat-card class="snapshot-card131" align="center">{{dataSource.data.length}}</mat-card>
+        </mat-card-content>  
+      </mat-card>  
+  </mat-grid-tile>
     <mat-grid-tile [colspan]=1  [rowspan]=1>   
       <mat-card class="snapshot-card2">  
         <mat-card-header>  
           <mat-card-title>  
-            <mat-icon svgIcon= "labourer"></mat-icon> 
-           Labourer
+            <mat-icon svgIcon= "assignment"></mat-icon> 
+           My Contracts
           </mat-card-title>
         </mat-card-header>  
         <mat-card-content class="dashboard-card-content">
         <mat-grid-list cols="2" rowHeight="2:1"> 
          <mat-grid-tile  [colspan]=1  [rowspan]=1>
-          <mat-card class="snapshot-card11" align="center">4567<mat-card-footer align="center">Active</mat-card-footer></mat-card>
+          <mat-card class="snapshot-card11" align="center">4567<mat-card-footer align="center">Approved</mat-card-footer></mat-card>
           </mat-grid-tile>
           <mat-grid-tile  [colspan]=1  [rowspan]=1>
-          <mat-card class="snapshot-card12" align="center">4567<mat-card-footer align="center">Inactive</mat-card-footer></mat-card>
+          <mat-card class="snapshot-card12" align="center">4567<mat-card-footer align="center">Pending</mat-card-footer></mat-card>
           </mat-grid-tile>
           </mat-grid-list>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>  
 
-    <mat-grid-tile [colspan]=1  [rowspan]=1>   
-      <mat-card class="snapshot-card2">  
-        <mat-card-header>  
-          <mat-card-title>  
-            <mat-icon svgIcon= "Employer"></mat-icon> 
-           Employers
-          </mat-card-title>
-        </mat-card-header>  
-        <mat-card-content class="dashboard-card-content">
-        <mat-grid-list cols="2" rowHeight="2:1"> 
-         <mat-grid-tile  [colspan]=1  [rowspan]=1>
-          <mat-card class="snapshot-card11" align="center">4567<mat-card-footer align="center">Active</mat-card-footer></mat-card>
-          </mat-grid-tile>
-          <mat-grid-tile  [colspan]=1  [rowspan]=1>
-          <mat-card class="snapshot-card12" align="center">4567<mat-card-footer align="center">Inactive</mat-card-footer></mat-card>
-          </mat-grid-tile>
-          </mat-grid-list>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]=1  [rowspan]=1>   
-      <mat-card class="snapshot-card2">  
-        <mat-card-header>  
-          <mat-card-title>  
-            <mat-icon svgIcon= "govt"></mat-icon> 
-           Govt Users
-          </mat-card-title>
-        </mat-card-header>  
-        <mat-card-content class="dashboard-card-content">
-        <mat-grid-list cols="2" rowHeight="2:1"> 
-         <mat-grid-tile  [colspan]=1  [rowspan]=1>
-          <mat-card class="snapshot-card11" align="center">4567<mat-card-footer align="center">Active</mat-card-footer></mat-card>
-          </mat-grid-tile>
-          <mat-grid-tile  [colspan]=1  [rowspan]=1>
-          <mat-card class="snapshot-card12" align="center">4567<mat-card-footer align="center">Inactive</mat-card-footer></mat-card>
-          </mat-grid-tile>
-          </mat-grid-list>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
     
   </mat-grid-list>  
 </div>

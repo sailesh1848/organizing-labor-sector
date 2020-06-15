@@ -71,4 +71,9 @@ export class AddContractComponent implements OnInit {
       );
     }
   }
+  skills = [
+    { id: 1, value: "Plumber" },
+    { id: 2, value: "Construction" },
+    { id: 3, value: "Carpenter" },
+  ];
 }

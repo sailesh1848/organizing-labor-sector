@@ -12,6 +12,9 @@ export class EmployerService {
   editParameter: number;
 
   constructor(private http: HttpClient) {}
+  getNameById(id: number) {
+    return this.http.get(`${this.baseUrl}/Skill/${id}`);
+  }
   getEmployerList(): Observable<any> {
     return this.http.get(`${this.baseUrl}` + "/Employer/");
   }

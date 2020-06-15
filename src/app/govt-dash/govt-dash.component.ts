@@ -20,6 +20,7 @@ export class GovtDashComponent implements OnInit {
     "employmentEndDate",
     "employmentState",
     "creationDate",
+    "actions",
   ];
 
   dataSource = new MatTableDataSource<Contract>(this.ELEMENT_DATA);
