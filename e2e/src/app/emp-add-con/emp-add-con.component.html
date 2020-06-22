@@ -1,0 +1,414 @@
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/emp"><mat-icon>home</mat-icon></a>
+    </mat-card>
+
+    <h2 align= "center" class="mat-h1">Add Contract</h2>  
+<!--<div class="form_align"> 
+    <div [hidden]="submitted" style="width: 50%;">
+            <form [formGroup]="registerContractForm"  #savecontract (ngSubmit)="onSubmit(savecontract)" #f="ngForm">
+            
+            
+
+            <div class="form-group">
+                <mat-form-field>
+          <mat-select formControlName="employerId" placeholder="Employer Id" required>
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let bt of employers">
+              <mat-option value="{{bt.employerId}}">{{bt.employerId}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+                </div>
+
+                
+                
+                
+                <div class="form-group"> 
+          <mat-form-field>
+          <label for="startdate">Employment Start Date</label>  
+              <input  matInput [matDatepicker]="picker1" placeholder="Employment Start Date"  formControlName="startdate"  
+                 title="Employment Start Date" disabled required> 
+             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+             <mat-datepicker #picker1 disabled="false"></mat-datepicker>
+                  <mat-error  *ngIf="registerContractForm.controls['startdate'].errors?.required">Employment Start Date Required</mat-error>
+          <mat-datepicker #picker1></mat-datepicker>
+              
+                </mat-form-field>  
+          </div> 
+
+
+<div class="form-group"> 
+          <mat-form-field>
+          <label for="enddate">Employment End Date</label>  
+              <input  matInput [matDatepicker]="picker" placeholder="Employment End Date"  formControlName="enddate"  
+                 title="Employment End Date" disabled required> 
+             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+             <mat-datepicker #picker disabled="false"></mat-datepicker>
+                  <mat-error  *ngIf="registerContractForm.controls['enddate'].errors?.required">Employment End Date Required</mat-error>
+          <mat-datepicker #picker></mat-datepicker>
+              
+                </mat-form-field>  
+          </div> 
+
+               
+       
+                <div class="form-group">
+                <mat-form-field> 
+                <label for="city">City</label>  
+              <input #c maxlength="50" matInput placeholder="City" formControlName="city"   
+                 title="Enter City" required>  
+                    <mat-error  *ngIf="registerContractForm.controls['city'].errors?.required"> City is required...</mat-error>  
+                    <mat-error  *ngIf="registerContractForm.controls['city'].errors?.pattern"> City should contain atleast 3 characters </mat-error> 
+                    <mat-hint align="end">{{c.value.length}} / 50</mat-hint>
+              </mat-form-field>
+                </div>
+
+                <div class="form-group">
+          <mat-form-field>  
+              <label for="state">State/UT</label>  
+                <mat-select placeholder="State/UT" formControlName="state" title="Select State" required>  
+                  <mat-option value="null">--Select State/UT--</mat-option>
+                  <mat-option value="Union Territory">Union Territory</mat-option>      
+                  <mat-option value="Andhra Pradesh">Andhra Pradesh</mat-option>  
+                  <mat-option value="Arunachal Pradesh">Arunachal Pradesh</mat-option>  
+                  <mat-option value="Assam">Assam</mat-option>  
+                  <mat-option value="Bihar">Bihar</mat-option>
+                  <mat-option value="Chhattisgarh">Chhattisgarh</mat-option>  
+                  <mat-option value="Goa">Goa</mat-option>  
+                  <mat-option value="Gujarat">Gujarat</mat-option>  
+                  <mat-option value="Haryana">Haryana</mat-option>  
+                  <mat-option value="Himachal Pradesh">Himachal Pradesh</mat-option>  
+                  <mat-option value="Jharkhand">Jharkhand</mat-option>  
+                  <mat-option value="Karnataka">Karnataka</mat-option>  
+                  <mat-option value="Kerala">Kerala</mat-option>  
+                  <mat-option value="Madhya Pradesh">Madhya Pradesh</mat-option>  
+                  <mat-option value="Maharashtra">Maharashtra</mat-option>  
+                  <mat-option value="Manipur">Manipur</mat-option>  
+                  <mat-option value="Meghalaya">Meghalaya</mat-option>  
+                  <mat-option value="Mizoram">Mizoram</mat-option>  
+                  <mat-option value="Nagaland">Nagaland</mat-option>  
+                  <mat-option value="Odisha">Odisha</mat-option>
+                  <mat-option value="Punjab">Punjab</mat-option>
+                  <mat-option value="Rajasthan">Rajasthan</mat-option>
+                  <mat-option value="Sikkim">Sikkim</mat-option>
+                  <mat-option value="Tamil Nadu">Tamil Nadu</mat-option>
+                  <mat-option value="Telangana">Telangana</mat-option>
+                  <mat-option value="Tripura">Tripura</mat-option>
+                  <mat-option value="Uttar Pradesh">Uttar Pradesh</mat-option>
+                  <mat-option value="Uttarakhand">Uttarakhand</mat-option>
+                  <mat-option value="West Bengal">West Bengal</mat-option>
+                </mat-select>
+                </mat-form-field>  
+          </div> 
+
+          <div class="form-group">
+            <mat-form-field> 
+          <label for="totalNoOfLabourerNeeded">Total Labourer Required</label>  
+          <input   matInput placeholder="Total Labourer Required" formControlName="totalNoOfLabourerNeeded"   
+             title="Total Labourer Required" required>  
+                <mat-error  *ngIf="registerContractForm.controls['totalNoOfLabourerNeeded'].errors?.required">Number Required</mat-error>  
+            
+      </mat-form-field>
+            </div>
+
+
+        
+
+        <div class= "form-group">
+          <mat-form-field>
+          <mat-select formControlName="skill_1" placeholder="Skill1" (selectionChange)="skillWage1($event)" required>
+            <mat-option>None</mat-option>
+              <mat-option  *ngFor="let skill of skills" [value]="skill.id">{{skill.id}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </div>
+
+
+        <div class="form-group">
+                <mat-form-field> 
+              <label for="labourerNeededSkillset1">Skill1 Required Number</label>  
+              <input   matInput placeholder="Skill1 Required Number" formControlName="labourerNeededSkillset1"   
+                 title="Skill1 Required Number" required>  
+                    <mat-error  *ngIf="registerContractForm.controls['labourerNeededSkillset1'].errors?.required">Number Required</mat-error>  
+                
+          </mat-form-field>
+                </div>
+
+              <div>
+            <tr>
+                <td>Minimum Daily Wage Skillset1</td>
+            </tr>
+            <tr>
+                <td><textarea>{{skill1.minDailyWage}}</textarea></td>
+            </tr>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field>  
+              <label for="dailyWageSkillset1">daily WageSkill set1</label>  
+              <input  placeholder="dailyWageSkillset1" matInput  formControlName="dailyWageSkillset1"   
+                  title="dailyWageSkillset1">     
+                     <mat-error  *ngIf="registerContractForm.controls['dailyWageSkillset1'].errors?.required">Number Required</mat-error>
+                    <mat-error *ngIf="registerContractForm.controls['dailyWageSkillset1'].errors?.pattern"> Enter valid wage </mat-error>  
+          </mat-form-field>
+          </div>
+
+
+ <div class= "form-group">
+          <mat-form-field>
+          <mat-select formControlName="skill_2" placeholder="Skill2" (input)="skillWage2($event)" required>
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let skill of skills">
+              <mat-option value="{{skill.id}}">{{skill.value}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        </div>
+
+               
+        <div class="form-group">
+                <mat-form-field> 
+              <label for="labourerNeededSkillset2">Skill2 Required Number</label>  
+              <input   matInput placeholder="Skill2 Required Number" formControlName="labourerNeededSkillset2"   
+                 title="Skill2 Required Number" required>  
+                    <mat-error  *ngIf="registerContractForm.controls['labourerNeededSkillset2'].errors?.required">Number Required</mat-error>  
+                
+          </mat-form-field>
+                </div>
+
+              <div>
+            <tr>
+                <td>Minimum Daily Wage Skillset2</td>
+            </tr>
+            <tr>
+                <td><textarea>{{skill2.minDailyWage}}</textarea></td>
+            </tr>
+        </div>
+<div class="form-group">
+          <mat-form-field>  
+              <label for="dailyWageSkillset2">dailyWageSkillset2</label>  
+              <input  placeholder="dailyWageSkillset2" matInput  formControlName="dailyWageSkillset2"   
+                  title="dailyWageSkillset2">     
+                     <mat-error  *ngIf="registerContractForm.controls['dailyWageSkillset2'].errors?.required">Number Required</mat-error>
+                    <mat-error *ngIf="registerContractForm.controls['dailyWageSkillset2'].errors?.pattern"> Enter valid wage </mat-error>  
+          </mat-form-field>
+          </div>
+
+
+
+
+ <div class= "form-group">
+          <mat-form-field>
+          <mat-select formControlName="skill_3" placeholder="Skill3" (input)="skillWage3($event)" required>
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let skill of skills">
+              <mat-option value="{{skill.id}}">{{skill.value}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        </div>
+
+    
+
+        <div class="form-group">
+                <mat-form-field> 
+              <label for="labourerNeededSkillset3">Skill3 Required Number</label>  
+              <input   matInput placeholder="Skill3 Required Number" formControlName="labourerNeededSkillset3"   
+                 title="Skill3 Required Number" required>  
+                    <mat-error  *ngIf="registerContractForm.controls['labourerNeededSkillset3'].errors?.required">Number Required</mat-error>  
+                
+          </mat-form-field>
+                </div>
+
+              <div>
+            <tr>
+                <td>Minimum Daily Wage Skillset3</td>
+            </tr>
+            <tr>
+                <td><textarea>{{skill3.minDailyWage}}</textarea></td>
+            </tr>
+        </div>
+
+<div class="form-group">
+          <mat-form-field>  
+              <label for="dailyWageSkillset3">dailyWageSkillset3</label>  
+              <input  placeholder="dailyWageSkillset3" matInput  formControlName="dailyWageSkillset3"   
+                  title="dailyWageSkillset3">     
+                     <mat-error  *ngIf="registerContractForm.controls['dailyWageSkillset1'].errors?.required">Number Required</mat-error>
+                    <mat-error *ngIf="registerContractForm.controls['dailyWageSkillset1'].errors?.pattern"> Enter valid wage </mat-error>  
+          </mat-form-field>
+          </div>
+
+
+        
+               
+               
+
+               <div class="form-group">
+
+               <label for="medicalInsuranceCover"><i>Medical Insurance Cover&nbsp;</i></label> 
+               <mat-radio-group formControlName="medicalInsuranceCover" required>
+            <mat-radio-button value="yes">Yes</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
+            <mat-error  *ngIf="registerContractForm.controls['medicalInsuranceCover'].errors?.required">Please select an option</mat-error>
+            </mat-radio-group>
+            </div>
+
+                <div>
+                    <button type="submit" class="btn btn-success" [disabled]="!registerContractForm.valid"><mat-icon svgIcon= "save"></mat-icon>Submit</button>
+                </div>
+                 
+            </form>
+            
+        </div>
+</div>-->
+
+<!-----------------------------rohit ka template driven code-------------------------------->
+<div [hidden]="submitted" class="one">
+  <form (ngSubmit)="save()">
+  <div class="form-group">
+          <label for="id">Employer Id</label>
+          <input type="number" class="form-control" id="id" [(ngModel)]="contract.employerId" name="id">
+      </div>
+     <!-- <div class="form-group">
+          <label for="name">Employer Name</label>
+          <input type="number" class="form-control" id="name" [(ngModel)]="contract.employerName" name="name">
+      </div>--->
+     <div class="form-group">
+          <label for="startdate">Employment Start Date</label>
+          <input type="date" class="form-control" id="startdate" [(ngModel)]="contract.employmentStartDate" name="startdate">
+      </div>
+
+      <div class="form-group">
+          <label for="enddate">Employment End Date</label>
+          <input type="date" class="form-control" id="enddate" [(ngModel)]="contract.employmentEndDate" name="enddate">
+      </div>
+      
+      <div class="form-group">
+          <label for="city">Employment City</label>
+          <input type="text" class="form-control" id="city" [(ngModel)]="contract.employmentCity" name="city">
+      </div>
+      <div class="form-group">
+          <label for="state"> Employment State</label>
+          <input type="text" class="form-control" id="state" [(ngModel)]="contract.employmentState" name="state">
+      </div>
+
+      <div class="form-group">
+          <label for="totalNoOfLabourerNeeded">totalNoOfLabourerNeeded</label>
+          <input type="number" class="form-control" id="totalNoOfLabourerNeeded" [(ngModel)]="contract.totalNoOfLabourerNeeded" name="totalNoOfLabourerNeeded">
+      </div>
+      <!--<div class="form-group">
+        <label for="skillset1">skillset1</label>
+        <select id="skillset1" name="skillset1" (change)="skillWage1($event.value)" [(ngModel)]="contract.skillset1" class="form-control">
+          <option value="11">Plumbing</option>
+          <option value="12">Construction</option>
+          <option value="13">Painting</option>
+        </select>
+      </div>-->
+      <div class="form-group">
+          <label for="skillset1">skillset1</label>
+          <input type="number" class="form-control"  id="skillset1" (input)="skillWage1($event)" [(ngModel)]="contract.skillset1" name="skillset1">
+      </div>
+
+      <div class="form-group">
+          <label for="labourerNeededSkillset1">labourerNeededSkillset1</label>
+          <input type="number" class="form-control" id="labourerNeededSkillset1" [(ngModel)]="contract.labourerNeededSkillset1" name="labourerNeededSkillset1">
+      </div>
+      
+      <div>
+          <tr>
+              <td>Minimum Daily Wage Skillset1</td>
+          </tr>
+          <tr>
+              <td><textarea>{{skill1.minDailyWage}}</textarea></td>
+          </tr>
+      </div>
+
+      <div class="form-group">
+          <label for="dailyWageSkillset1">dailyWageSkillset1</label>
+          <input type="number" class="form-control" id="dailyWageSkillset1" [(ngModel)]="contract.dailyWageSkillset1" name="dailyWageSkillset1">
+      </div>
+    
+      <div class="form-group">
+          <label for="skillset2">skillset2</label>
+          <input type="number" class="form-control"  id="skillset2" (input)="skillWage2($event)" [(ngModel)]="contract.skillset2" name="skillset2">
+      </div>
+
+      <div class="form-group">
+          <label for="labourerNeededSkillset2">labourerNeededSkillset2</label>
+          <input type="number" class="form-control" id="labourerNeededSkillset2" [(ngModel)]="contract.labourerNeededSkillset2" name="labourerNeededSkillset2">
+      </div>
+      
+      
+      <div>
+          <tr>
+              <td>Minimum Daily Wage Skillset2</td>
+          </tr>
+          <tr>
+              <td><textarea>{{skill2.minDailyWage}}</textarea></td>
+          </tr>
+      </div>
+
+      <div class="form-group">
+          <label for="dailyWageSkillset1">dailyWageSkillset2</label>
+          <input type="number" class="form-control" id="dailyWageSkillset2" [(ngModel)]="contract.dailyWageSkillset2" name="dailyWageSkillset2">
+      </div>
+    
+      <div class="form-group">
+          <label for="skillset3">skillset3</label>
+          <input type="number" class="form-control"  id="skillset3" (input)="skillWage3($event)" [(ngModel)]="contract.skillset3" name="skillset3">
+      </div>
+
+      <div class="form-group">
+          <label for="labourerNeededSkillset3">labourerNeededSkillset3</label>
+          <input type="number" class="form-control" id="labourerNeededSkillset3" [(ngModel)]="contract.labourerNeededSkillset3" name="labourerNeededSkillset3">
+      </div>
+      
+      
+      <div>
+          <tr>
+              <td>Minimum Daily Wage Skillset3</td>
+          </tr>
+          <tr>
+              <td><textarea>{{skill3.minDailyWage}}</textarea></td>
+          </tr>
+      </div>
+
+      <div class="form-group">
+          <label for="dailyWageSkillset3">dailyWageSkillset3</label>
+          <input type="number" class="form-control" id="dailyWageSkillset3" [(ngModel)]="contract.dailyWageSkillset3" name="dailyWageSkillset3">
+      </div>
+
+      <div class="form-group">
+          <label for="medicalInsuranceCover">Employment medicalInsuranceCover</label>
+          <input type="text" class="form-control" id="medicalInsuranceCover" [(ngModel)]="contract.medicalInsuranceCover" name="medicalInsuranceCover">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+
+
+      <div class="form_algin" align="center">  
+        <div [hidden]="!submitted">  
+           <h4>Data Added SuccessFully!</h4>  
+           <button (click)="save()" mat-raised-button color="primary"><mat-icon svgIcon= "addmore"></mat-icon>Add More Contracts</button>  
+        </div>        
+    </div>
+    </form>
+</div>
+
+
+
+
+
+<!----------------------------------------------------------------------------------------------
+ <div class="form_algin" align="center">  
+      <div [hidden]="!submitted">  
+         <h4>Data Added SuccessFully!</h4>  
+         <button (click)="addContractForm()" mat-raised-button color="primary"><mat-icon svgIcon= "addmore"></mat-icon>Add More Contracts</button>  
+      </div>        
+  </div>-->
+
+
+<div class="footer" align= "center">Capgemini.All rights reserved 2020.</div>
+
+
+

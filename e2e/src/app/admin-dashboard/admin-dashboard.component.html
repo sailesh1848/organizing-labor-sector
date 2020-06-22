@@ -1,0 +1,179 @@
+<body>
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/admin"><mat-icon>home</mat-icon></a>
+    <a mat-button routerLink="add-employer"  color="primary"> <mat-icon svgIcon= "Add"></mat-icon>Add Employer</a>
+    <a mat-button routerLink="add-labour" color="primary"> <mat-icon svgIcon= "Add"></mat-icon>Add Labourer</a>
+    <a mat-button routerLink="view-employers" color="primary"> <mat-icon svgIcon= "reports"></mat-icon>View Employers</a>
+    <a mat-button routerLink="view-lbrs"  color="primary"> <mat-icon svgIcon= "reports"></mat-icon>View Labourers</a>
+    </mat-card>
+  
+<div class="grid-container1">   
+  <mat-grid-list cols="4" rowHeight=".5:.18" >  
+    <mat-grid-tile  [colspan]=1 [rowspan]=1>
+      <mat-icon  class="i" align="left"svgIcon="labourer"></mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-card align="right" class="dashboard-card1" text-align="center">  
+      Labourers &nbsp;<b class="card-text">{{ dashBoardCounts.labourersCount}}</b>
+      </mat-card>  
+    </mat-grid-tile>  
+   <mat-grid-tile  [colspan]=1 [rowspan]=1>
+      <mat-icon  class="i" align="left"svgIcon="Employer"></mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-card align="right" class="dashboard-card2" text-align="center">  
+      Employers &nbsp;<b class="card-text">{{ dashBoardCounts.employersCount}}</b>
+      </mat-card>  
+    </mat-grid-tile>  
+    <mat-grid-tile  [colspan]=1 [rowspan]=1>
+      <mat-icon  class="i" align="left"svgIcon="govt"></mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-card align="right" class="dashboard-card3" text-align="center">  
+      Govt Users &nbsp;<b class="card-text">{{ dashBoardCounts.govtUserCount}}</b>
+      </mat-card>  
+    </mat-grid-tile>
+  </mat-grid-list>  
+</div>
+
+<div class="grid-container2">  
+  <h3 class="mat-h1" align="center"><b>Snapshot</b></h3>  
+  <mat-grid-list class="grid2" cols="4" rowHeight=".5:.18"> 
+  <mat-grid-tile  [colspan]=1  [rowspan]=1>
+  <mat-card class="snapshot-card1">  
+        <mat-card-header>  
+          <mat-card-title>
+          <mat-icon svgIcon= "pending"></mat-icon> 
+           Pending Aprrovals
+          </mat-card-title>  
+        </mat-card-header>  
+        <mat-card-content class="dashboard-card-content" align="center">  
+          <mat-card class="snapshot-card13" align="center">{{dataSource.data.length}}</mat-card>
+        </mat-card-content>  
+      </mat-card>  
+  </mat-grid-tile>
+    <mat-grid-tile [colspan]=1  [rowspan]=1>   
+      <mat-card class="snapshot-card2">  
+        <mat-card-header>  
+          <mat-card-title>  
+            <mat-icon svgIcon= "labourer"></mat-icon> 
+           Labourer
+          </mat-card-title>
+        </mat-card-header>  
+        <mat-card-content class="dashboard-card-content">
+        <mat-grid-list cols="2" rowHeight="2:1"> 
+         <mat-grid-tile  [colspan]=1  [rowspan]=1>
+          <mat-card class="snapshot-card11" align="center">{{ dashBoardCounts.activeLabourers}}<mat-card-footer align="center">Active</mat-card-footer></mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile  [colspan]=1  [rowspan]=1>
+          <mat-card class="snapshot-card12" align="center">{{ dashBoardCounts.inActiveLabourers}}<mat-card-footer align="center">Inactive</mat-card-footer></mat-card>
+          </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>  
+
+    <mat-grid-tile [colspan]=1  [rowspan]=1>   
+      <mat-card class="snapshot-card2">  
+        <mat-card-header>  
+          <mat-card-title>  
+            <mat-icon svgIcon= "Employer"></mat-icon> 
+           Employers
+          </mat-card-title>
+        </mat-card-header>  
+        <mat-card-content class="dashboard-card-content">
+        <mat-grid-list cols="2" rowHeight="2:1"> 
+         <mat-grid-tile  [colspan]=1  [rowspan]=1>
+          <mat-card class="snapshot-card11" align="center">{{ dashBoardCounts.approvedEmployers}}<mat-card-footer align="center">Approved</mat-card-footer></mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile  [colspan]=1  [rowspan]=1>
+          <mat-card class="snapshot-card12" align="center">{{ dashBoardCounts.pendingEmployers}}<mat-card-footer align="center">Pending</mat-card-footer></mat-card>
+          </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]=1  [rowspan]=1>   
+      <mat-card class="snapshot-card2">  
+        <mat-card-header>  
+          <mat-card-title>  
+            <mat-icon svgIcon= "govt"></mat-icon> 
+           Govt Users
+          </mat-card-title>
+        </mat-card-header>  
+        <mat-card-content class="dashboard-card-content">
+        <mat-grid-list cols="2" rowHeight="2:1"> 
+         <mat-grid-tile  [colspan]=1  [rowspan]=1>
+          <mat-card class="snapshot-card11" align="center">{{ dashBoardCounts.activeGovtUsers}}<mat-card-footer align="center">Active</mat-card-footer></mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile  [colspan]=1  [rowspan]=1>
+          <mat-card class="snapshot-card12" align="center">{{ dashBoardCounts.inActiveGovtUsers}}<mat-card-footer align="center">Inactive</mat-card-footer></mat-card>
+          </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    
+  </mat-grid-list>  
+</div>
+
+<h2 align= "center" class="mat-h1">Pending Aprroval Table</h2>  
+<div class="filter_align"  >
+<mat-form-field>
+  <mat-label>Filter as you type anything</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type to filter">
+</mat-form-field>
+</div>
+
+<div class="table-hover" >
+  <table mat-table [dataSource]="dataSource" matSort >
+
+    
+    <ng-container matColumnDef="employerId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Employer Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.employerId}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="employerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Employer Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.employerName}}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
+      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="businessType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Business Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.businessType}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let element" > {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)="viewEmployer(row.employerId)"><mat-icon svgIcon="view"></mat-icon></button>
+        <button mat-icon-button color="warn" (click)="editEmployer(row.employerId)"><mat-icon svgIcon= "edit"></mat-icon></button>
+      </td>
+    </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row  *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10,5, 15, 25, 50, 100]"></mat-paginator>
+</div>
+
+
+
+<app-footer></app-footer>
+<body>

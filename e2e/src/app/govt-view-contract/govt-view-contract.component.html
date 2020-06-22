@@ -1,0 +1,106 @@
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/admin"><mat-icon>home</mat-icon></a>
+    </mat-card>
+    <h2 align= "center" class="mat-h1">Contract Approval Page</h2>  
+<div class="container">
+    <div class="row">
+        <table align="center">
+            <tr>
+                <th>employerId:</th>
+                <td>{{ contract.employerId }}</td>
+            </tr>
+            <tr>
+                <th>employmentStartDate:</th>
+                <td>{{ contract.employmentStartDate }}</td>
+            </tr>
+            <tr>
+                <th>employmentEndDate:</th>
+                <td>{{ contract.employmentEndDate }}</td>
+            </tr>
+            <tr>
+                <th>employmentCity:</th>
+                <td>{{ contract.employmentCity }}</td>
+            </tr>
+            <tr>
+                <th>employmentState:</th>
+                <td>{{ contract.employmentState }}</td>
+            </tr>
+            <tr>
+                <th>totalNoOfLabourerNeeded:</th>
+                <td>{{ contract.totalNoOfLabourerNeeded }}</td>
+            </tr>
+            <tr>
+                <th>skillset1:</th>
+                <td>{{ contract.skillset1 }}</td>
+            </tr>
+            <tr>
+                <th>labourerNeededSkillset1:</th>
+                <td>{{ contract.labourerNeededSkillset1 }}</td>
+            </tr>
+            <tr>
+                <th>minDailyWageSkillset1:</th>
+                <td>{{ contract.minDailyWageSkillset1 }}</td>
+            </tr>
+            <tr>
+                <th>dailyWageSkillset1:</th>
+                <td>{{ contract.dailyWageSkillset1 }}</td>
+            </tr>
+            <tr>
+                <th>skillset2:</th>
+                <td>{{ contract.skillset2 }}</td>
+            </tr>
+            <tr>
+                <th>labourerNeededSkillset2:</th>
+                <td>{{ contract.labourerNeededSkillset2 }}</td>
+            </tr>
+            <tr>
+                <th>minDailyWageSkillset2:</th>
+                <td>{{ contract.minDailyWageSkillset2 }}</td>
+            </tr>
+            <tr>
+                <th>dailyWageSkillset2:</th>
+                <td>{{ contract.dailyWageSkillset2 }}</td>
+            </tr>
+            <tr>
+                <th>skillset3:</th>
+                <td>{{ contract.skillset3 }}</td>
+            </tr>
+            <tr>
+                <th>labourerNeededSkillset3:</th>
+                <td>{{ contract.labourerNeededSkillset3 }}</td>
+            </tr>
+            <tr>
+                <th>minDailyWageSkillset3:</th>
+                <td>{{ contract.minDailyWageSkillset3 }}</td>
+            </tr>
+            <tr>
+                <th>dailyWageSkillset3:</th>
+                <td>{{ contract.dailyWageSkillset3 }}</td>
+            </tr>
+            <tr>
+                <th>medicalInsuranceCover:</th>
+                <td>{{ contract.medicalInsuranceCover }}</td>
+            </tr>
+            <tr>
+                <th>status:</th>
+                <td>{{ contract.status }}</td>
+            </tr>
+            <tr>
+                <th>creationDate:</th>
+                <td>{{ contract.creationDate }}</td>
+            </tr>
+            <tr>
+                <th>lastModifiedDate:</th>
+                <td>{{ contract.lastModifiedDate }}</td>
+            </tr>
+        </table>
+    </div>
+    <div align="center">
+        <button type="button" class="btn btn-success" (click)="approveContract()"><mat-icon svgIcon= "approve"></mat-icon> Approve</button>
+
+        <button type="button" class="btn btn-danger" style="margin: 15px;" 
+        (click)="rejectContract()"><mat-icon svgIcon= "reject"></mat-icon> Reject</button>
+    </div>
+    
+</div>
+<app-footer></app-footer>

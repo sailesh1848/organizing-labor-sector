@@ -1,0 +1,66 @@
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/admin"><mat-icon>home</mat-icon></a>
+    </mat-card>
+    <h2 align= "center" class="mat-h1">Employer Approval Page</h2>  
+<div class="container">
+    <div class="row">
+        <table align="center">
+            <tr>
+                <th>employerName:</th>
+                <td>{{ employer.employerName }}</td>
+            </tr>
+            <tr>
+                <th>address:</th>
+                <td>{{ employer.address }}</td>
+            </tr>
+            <tr>
+                <th>city:</th>
+                <td>{{ employer.city }}</td>
+            </tr>
+            <tr>
+                <th>state:</th>
+                <td>{{ employer.state }}</td>
+            </tr>
+            <tr>
+                <th>pincode:</th>
+                <td>{{ employer.pincode }}</td>
+            </tr>
+            <tr>
+                <th>contactName:</th>
+                <td>{{ employer.contactName }}</td>
+            </tr>
+            <tr>
+                <th>phNo:</th>
+                <td>{{ employer.phNo }}</td>
+            </tr>
+            <tr>
+                <th>businessType:</th>
+                <td>{{ employer.businessType }}</td>
+            </tr>
+            <tr>
+                <th>tanNo:</th>
+                <td>{{ employer.tanNo }}</td>
+            </tr>
+            <tr>
+                <th>regnNo:</th>
+                <td>{{ employer.regnNo }}</td>
+            </tr>
+            <tr>
+                <th>creationDate:</th>
+                <td>{{ employer.creationDate }}</td>
+            </tr>
+            <tr>
+                <th>status:</th>
+                <td>{{ employer.status }}</td>
+            </tr>
+        </table>
+    </div>
+    <div align="center">
+        <button type="button" class="btn btn-success" (click)="approveEmployer()"><mat-icon svgIcon= "approve"></mat-icon> Approve</button>
+
+        <button type="button" class="btn btn-danger" style="margin: 15px;" 
+        (click)="rejectEmployer()"><mat-icon svgIcon= "reject"></mat-icon> Reject</button>
+    </div>
+    
+</div>
+<app-footer></app-footer>

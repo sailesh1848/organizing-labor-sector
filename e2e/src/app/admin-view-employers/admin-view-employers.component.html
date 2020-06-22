@@ -1,0 +1,102 @@
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/admin"><mat-icon>home</mat-icon></a>
+    </mat-card>
+
+<h2 align= "center" class="mat-h1">Employers List</h2>  
+<div class="filter_align"  >
+<mat-form-field>
+  <mat-label>Filter as you type anything</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type to filter">
+</mat-form-field>
+</div>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="employerId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Employer Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.employerId}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="employerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Employer Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.employerName}}</td>
+    </ng-container>
+
+  
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
+      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pincode">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Pincode </th>
+      <td mat-cell *matCellDef="let element"> {{element.pincode}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="contactName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.contactName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phNo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ph No </th>
+      <td mat-cell *matCellDef="let element"> {{element.phNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="businessType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Business Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.businessType}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tanNo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tan No </th>
+      <td mat-cell *matCellDef="let element"> {{element.tanNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="regnNo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Regn No </th>
+      <td mat-cell *matCellDef="let element"> {{element.regnNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="creationDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.creationDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastModifiedDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> last Modified Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastModifiedDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let element" > {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>actions</th>
+      <td mat-cell *matCellDef="let row">
+       <button mat-icon-button color="warn" (click)="editEmployer(row.employerId)"><mat-icon svgIcon= "edit"></mat-icon></button>
+        <button mat-icon-button color="warn"><mat-icon>delete-outline</mat-icon></button>
+      </td>
+    </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row  *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+
+<app-footer></app-footer>

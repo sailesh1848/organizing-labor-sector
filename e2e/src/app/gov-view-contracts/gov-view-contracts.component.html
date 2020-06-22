@@ -1,0 +1,61 @@
+<body>
+<mat-card>
+    <a mat-icon-button color="primary" routerLink="/gov"><mat-icon>home</mat-icon></a>
+    </mat-card>
+  
+
+
+<h2 align= "center" class="mat-h1">Contract List</h2>  
+<div class="filter_align"  >
+<mat-form-field>
+  <mat-label>Filter as you type anything</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type to filter">
+</mat-form-field>
+</div>
+
+<div class="table-hover" >
+  <table mat-table [dataSource]="dataSource" matSort >
+    
+    <ng-container matColumnDef="contractId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> contractId Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.contractId}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="employmentStartDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> employmentStartDate Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.employmentStartDate}}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="employmentEndDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> employmentEndDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.employmentEndDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="employmentState">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> employmentState </th>
+      <td mat-cell *matCellDef="let element"> {{element.employmentState}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="creationDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> creationDate Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.creationDate}} </td>
+    </ng-container>
+
+
+    
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row  *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10,5, 15, 25, 50, 100]"></mat-paginator>
+</div>
+
+
+
+<body>
+<app-footer></app-footer>
