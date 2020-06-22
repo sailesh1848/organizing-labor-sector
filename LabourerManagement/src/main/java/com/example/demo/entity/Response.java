@@ -20,6 +20,16 @@ public class Response
 	
 	private long inActiveGovtUsers;
 	
+	private long contractCount;
+	
+	public long getContractCount() {
+		return contractCount;
+	}
+
+	public void setContractCount(long contractCount) {
+		this.contractCount = contractCount;
+	}
+
 	public Response()
 	{
 		
@@ -27,7 +37,7 @@ public class Response
 
 	public Response(long employersCount, long pendingEmployers, long approvedEmployers, long labourersCount,
 			long activeLabourers, long inActiveLabourers, long govtUserCount, long activeGovtUsers,
-			long inActiveGovtUsers) {
+			long inActiveGovtUsers, long contractCount) {
 		this.employersCount = employersCount;
 		this.pendingEmployers = pendingEmployers;
 		this.approvedEmployers = approvedEmployers;
@@ -37,6 +47,7 @@ public class Response
 		this.govtUserCount = govtUserCount;
 		this.activeGovtUsers = activeGovtUsers;
 		this.inActiveGovtUsers = inActiveGovtUsers;
+		this.contractCount = contractCount;
 	}
 
 	public long getEmployersCount() 
@@ -129,7 +140,7 @@ public class Response
 				+ ", approvedEmployers=" + approvedEmployers + ", labourersCount=" + labourersCount
 				+ ", activeLabourers=" + activeLabourers + ", inActiveLabourers=" + inActiveLabourers
 				+ ", govtUserCount=" + govtUserCount + ", activeGovtUsers=" + activeGovtUsers + ", inActiveGovtUsers="
-				+ inActiveGovtUsers + "]";
+				+ inActiveGovtUsers + ", contractCount=" + contractCount + "]";
 	}
 	
 }

@@ -1,14 +1,15 @@
 package com.example.demo.service;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.example.demo.dao.LabourerDao;
 import com.example.demo.entity.Labourer;
 import com.example.demo.exception.EmployerDataInvalidException;
+import com.example.demo.exception.LabourerNotFoundException;
 
 @Service
 public class LabourerServiceImpl implements LabourerService
@@ -52,7 +53,6 @@ public class LabourerServiceImpl implements LabourerService
 		return labourerDao.save(theLabourer);
 	}
 
-	
 	@Override
 	public void validateData(String fieldValue, String regex, String fieldName) 
 	{
@@ -64,5 +64,54 @@ public class LabourerServiceImpl implements LabourerService
 			throw new EmployerDataInvalidException("Check the Labourer Field: "+fieldName);
 		}
 	}
+
+	@Override
+	public List<Labourer> getLabourers() 
+	{
+		return labourerDao.findAll();
+	}
+
+	@Override
+	public Labourer getLabourerById(int labourerId) 
+	{
+		Optional<Labourer> result = labourerDao.findById(labourerId);
+		
+		Labourer theLabourer = null;
+		
+		if(result.isPresent())
+		{
+			theLabourer = result.get();
+		}
+		else
+		{
+			throw new LabourerNotFoundException("Labourer with Id: "+labourerId+" Not Found");
+		}
+		
+		return theLabourer;
+	}
+
+	@Override
+	public void deleteLabourer(int labourerId) 
+	{
+		Optional<Labourer> result = labourerDao.findById(labourerId);
+		
+		if(result.isPresent())
+		{
+			labourerDao.deleteById(labourerId);
+		}
+		else
+		{
+			throw new LabourerNotFoundException("Labourer with Id: "+labourerId+" Not Found");
+		}
+		
+	}
+
+	
+	@Override
+	public Labourer editLabourer(Labourer labourer) 
+	{
+		return labourerDao.save(labourer);
+	}
+
 	
 }

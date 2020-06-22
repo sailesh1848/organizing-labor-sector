@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.dao.EmployerDao;
 import com.example.demo.entity.Employer;
 import com.example.demo.exception.EmployerDataInvalidException;
+import com.example.demo.exception.EmployerNotFoundException;
 import com.example.demo.exception.EmployerTableEmptyException;
 
 @Service
@@ -98,7 +100,35 @@ public class EmployerServiceImpl implements EmployerService
 	@Override
 	public void deleteEmployer(int employerId) 
 	{
-		employerDao.deleteById(employerId);
+		Optional<Employer> result = employerDao.findById(employerId);
+		
+		if(result.isPresent())
+		{
+			employerDao.deleteById(employerId);
+		}
+		else
+		{
+			throw new EmployerNotFoundException("Employer with Id:"+employerId+" not found");
+		}
+	}
+
+	@Override
+	public Employer getEmployer(int employerId) 
+	{
+		Optional<Employer> result = employerDao.findById(employerId);
+		
+		Employer theEmployer = null;
+		
+		if(result.isPresent())
+		{
+			theEmployer = result.get();
+		}
+		else
+		{
+			throw new EmployerNotFoundException("Employer with Id:"+employerId+" not found");
+		}
+		
+		return theEmployer;
 	}
 	
 }

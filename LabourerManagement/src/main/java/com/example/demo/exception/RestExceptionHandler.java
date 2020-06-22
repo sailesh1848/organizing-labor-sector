@@ -49,6 +49,18 @@ public class RestExceptionHandler
 	}
 	
 	@ExceptionHandler
+	public ResponseEntity<ErrorResponse> handleException(EmployerNotFoundException exc)
+	{
+		ErrorResponse response = new ErrorResponse();
+		
+		response.setMessage(exc.getMessage());
+		response.setStatus(HttpStatus.NOT_FOUND.value());
+		response.setTimeStamp(System.currentTimeMillis());
+
+		return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler
 	public ResponseEntity<ErrorResponse> handleException(Exception exc)
 	{
 		ErrorResponse response = new ErrorResponse();

@@ -189,6 +189,10 @@ public class GovtUser
 	{
 		this.activeStatus = activeStatus;
 	}
+	
+	public String getActiveStatus() {
+		return activeStatus;
+	}
 
 	public Date getCreationDate() 
 	{

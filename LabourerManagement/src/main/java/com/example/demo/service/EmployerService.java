@@ -19,6 +19,8 @@ public interface EmployerService
 	
 	public Employer editEmployer(Employer employer);
 	
+	public Employer getEmployer(int emloyerId);
+	
 	public void deleteEmployer(int employerId);
 
 }
